@@ -111,7 +111,7 @@ limits:
 To set up fast-agent integration, run:
 
 ```bash
-vibe setup fast-agent
+fast-agent setup
 ```
 
 **Important:** Make sure to add all secrets files to your `.gitignore`:
@@ -151,15 +151,27 @@ Contributions are what make the open source community such an amazing place to l
 
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/vibeshell.git
+git clone https://github.com/aswinpajayan/VibeShell.git
 
 # Install dev dependencies
-cd vibeshell
+cd VibeShell
 uv add -e ".[dev]"
+fast-agent setup
+
+# edit secrets file and them to .gitignore
+
+# configure the bind path of volume for ollama in docker-compose.yaml file
+# start ollama service. 
+docker compose up ollama
+
+# if running for the first time, download a model using the below command. 
+docker exec -it ollama ollama run llama3
 
 # Run tests
 pytest
 ```
+
+>checkout all [models from ollama](https://github.com/ollama/ollama#model-library)
 
 ### Areas We Need Help With
 
