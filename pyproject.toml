@@ -1,0 +1,9 @@
+[project]
+name = "vibeshell"
+version = "0.1.0"
+description = "A simple lean application for vibe coding using ollama and fast agents"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fast-agent-mcp>=0.2.26",
+]
