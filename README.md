@@ -42,11 +42,34 @@ uv add -e .
 - Python 3.12+
 - Docker
 - uv
+- npx
 
+### llama 3.2 setup
+- for the first run of ollama service, bind a folder to download the ollama model.
+you can do this by modifying to docker compose file.  run the ollama service
+```bash
+docker compose up ollama
+```
+- pull llama3.2 by using one of the commands [here](https://github.com/ollama/ollama#model-library)
+```bash
+docker exec -it ollama ollama run llama3.2
+```
+> you have to select a version of llama that [support tool calling](https://ollama.com/search?c=tools)
 
 ## 📋 Usage
 
+Make sure the ollama service is running. 
+```bash
+docker compose up ollama
+```
+Spawn an agent using fast agents
+```bash
+uv run agent.py --model generic.llama3.3
+```
+
 Coming soon
+> currently only filesystem server is registered. Its a work in progress
+
 
 Add your requirements in requirements.vibe
 <!--
