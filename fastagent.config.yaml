@@ -42,7 +42,16 @@ mcp:
              "run",
               "-i",
               "--rm",
-              "--mount", "type=bind,src=/home/aswin/xcode/test/,dst=/projects/",
+              "--mount", "type=bind,src=/home/aswin/xcode/test/,dst=/projects/test-data",
+              "--mount", "type=bind,src=./,dst=/projects/workspace/",
               "mcp/filesystem",
               "/projects"
           ]
+          roots:
+            - uri: "file://./"
+              name: "workspace"
+              server_uri_alias: "file:///projects/workspace/"
+            - uri: "file://home/aswin/xcode/test/"
+              name: "test-data"
+              server_uri_alias: "file:///projects/workspace/"
+
