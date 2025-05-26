@@ -64,6 +64,7 @@ docker compose up ollama
 ```
 Spawn an agent using fast agents
 ```bash
+uv sync
 uv run agent.py --model generic.llama3.2
 ```
 
